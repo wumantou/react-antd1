@@ -1,15 +1,18 @@
 import React from 'react'
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 import { connect } from 'react-redux'
-import DefaultLayout from '../../layouts/default'
 import { login } from '../../actions/login'
+import axios from '../../common/axios-core';
+import './index.css'
 
 const FormItem = Form.Item;
 
 class NormalLoginForm extends React.Component {
-    handleSubmit = (e) => {
+    handleSubmit = async (e) => {
         e.preventDefault();
-
+        await axios.get('http://127.0.0.1:8761/test').then((data) => {
+            console.log(data)
+        })
         this.props.login()
         // this.props.form.validateFields((err, values) => {
         //     if (!err) {
