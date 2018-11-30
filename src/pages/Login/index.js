@@ -10,7 +10,7 @@ const FormItem = Form.Item;
 class NormalLoginForm extends React.Component {
     handleSubmit = async (e) => {
         e.preventDefault();
-        await axios.get('http://127.0.0.1:8761/test').then((data) => {
+        await axios.get('http://127.0.0.1:8080/login').then((data) => {
             console.log(data)
         })
         this.props.login()
