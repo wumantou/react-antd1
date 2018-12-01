@@ -4,16 +4,24 @@ import { connect } from 'react-redux'
 import { login } from '../../actions/login'
 import axios from '../../common/axios-core';
 import './index.css'
+import {withRouter} from 'react-router-dom';
 
 const FormItem = Form.Item;
 
 class NormalLoginForm extends React.Component {
+
+
     handleSubmit = async (e) => {
         e.preventDefault();
         await axios.get('http://127.0.0.1:8080/login').then((data) => {
             console.log(data)
+            if(data.data.state === 200) {
+                console.log("login index.js  login success!")
+                this.props.login()
+                this.props.history.push('/admin');
+            }
         })
-        this.props.login()
+
         // this.props.form.validateFields((err, values) => {
         //     if (!err) {
         //         console.log('Received values of form: ', values);
@@ -24,7 +32,7 @@ class NormalLoginForm extends React.Component {
     render() {
         const { getFieldDecorator } = this.props.form;
         return (
-            <Form onSubmit={this.handleSubmit} className="login-form">
+            <Form onSubmit={this.handleSubmit.bind(this)} className="login-form">
                 <FormItem>
                     {getFieldDecorator('userName', {
                         rules: [{ required: true, message: 'Please input your username!' }],
@@ -57,14 +65,14 @@ class NormalLoginForm extends React.Component {
     }
 }
 
-const WrappedNormalLoginForm = Form.create()(NormalLoginForm);
+const WrappedNormalLoginForm = Form.create()(withRouter(NormalLoginForm));
 
 const Temp = connect(
     state => {
         console.log(state)
         return state
     },
-    dispatch => ({ login: () => dispatch(login())})
+    dispatch => ({ login: () => dispatch(login(true))})
 )(WrappedNormalLoginForm)
 
 export default () => (
