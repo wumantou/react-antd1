@@ -1,7 +1,6 @@
 import { Table, Input, Button, Icon } from 'antd';
 import React from 'react'
 import './index.css'
-import Layout from '../../../layouts/admin'
 
 const data = [{
     key: '1',

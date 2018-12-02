@@ -7511,6 +7511,10 @@ react-slick@~0.23.2:
     prettier "^1.14.3"
     resize-observer-polyfill "^1.5.0"
 
+react-websocket@^2.0.0:
+  version "2.0.0"
+  resolved "http://registry.npm.taobao.org/react-websocket/download/react-websocket-2.0.0.tgz#efc72f3e841ee1befe78efe634c9982fae16348a"
+
 react@16.6.1:
   version "16.6.1"
   resolved "http://registry.npm.taobao.org/react/download/react-16.6.1.tgz#ee2aef4f0a09e494594882029821049772f915fe"
