@@ -1,38 +1,26 @@
-import React from 'react';
-import Websocket from 'react-websocket';
+import React from 'react'
+import {Button} from "antd";
+import SocketCom from '../../common/web-socket'
 
-class SocketDetail extends React.Component {
-
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         count: 90
-    //     };
-    // }
-
-    handleData(data) {
-        let result = JSON.parse(data);
-        console.log(result)
-        // this.setState({count: this.state.count + result.movement});
+class SockJsDetail extends React.Component {
+    constructor(props) {
+        super(props);
     }
 
-    onOpen() {
-        console.log('open success')
+    handleSubmit = () => {
+        const sendFun = SocketCom("http://localhost:8080/endpointChat", '/topic/getResponse', "/welcome", (message) => {console.log('back message!!!!!!!!!!!!!!!!!!!!!!!!!!!!' + message.data)});
+        sendFun({'message': "i am test!!!!"});
     }
 
     render() {
         return (
             <div>
-                Count: <strong>100</strong>
-
-                <Websocket url='ws://localhost:8080/endpointChat'
-                           onMessage={this.handleData.bind(this)}
-                           onOpen={this.onOpen.bind(this)}
-                           debug={true}/>
-
+                <Button type="primary" htmlType="submit" className="login-form-button" onClick={this.handleSubmit.bind(this)}>
+                    connect socket
+                </Button>
             </div>
         );
     }
 }
 
-export default SocketDetail;
+export default SockJsDetail

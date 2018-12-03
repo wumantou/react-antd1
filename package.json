@@ -37,6 +37,7 @@
     "jest-pnp-resolver": "1.0.1",
     "jest-resolve": "23.6.0",
     "mini-css-extract-plugin": "0.4.3",
+    "net": "^1.0.2",
     "optimize-css-assets-webpack-plugin": "5.0.1",
     "pnp-webpack-plugin": "1.1.0",
     "postcss-flexbugs-fixes": "4.1.0",
@@ -50,11 +51,14 @@
     "react-hot-loader": "4.3.12",
     "react-redux": "5.1.0",
     "react-router-dom": "4.3.1",
-    "react-websocket": "2.0.0",
+    "react-stomp": "^4.0.0",
     "redux": "4.0.1",
     "redux-thunk": "2.3.0",
     "resolve": "1.8.1",
     "sass-loader": "7.1.0",
+    "sockjs": "^0.3.19",
+    "sockjs-client": "^1.3.0",
+    "stompjs": "^2.3.3",
     "style-loader": "0.23.0",
     "terser-webpack-plugin": "1.1.0",
     "url-loader": "1.1.1",
@@ -122,5 +126,8 @@
     "presets": [
       "react-app"
     ]
-  }
+  },
+  "proxy": "http://localhost:8080"
 }
+
+
