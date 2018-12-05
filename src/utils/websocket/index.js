@@ -12,7 +12,7 @@ class SockJsDetail extends React.Component {
                 console.log('back message!!!!!!!!!!!!!!!!!!!!!!!!!!!!' + message.data)
             }
         );
-        sendFun({'message': "i am test!!!!"});
+        sendFun({'message': "i am socket test!!!!"});
     }
 
     render() {

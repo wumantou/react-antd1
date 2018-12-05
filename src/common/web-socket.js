@@ -4,20 +4,20 @@ import Stomp from 'stompjs'
 const socketFun = async (endpointUrl, subscribeUrl, sendUrl, messageCallback) => {
 
     const sockjs = new SockJS(endpointUrl);
-    // console.log(sockjs)
+    console.log(sockjs)
     const client = Stomp.over(sockjs);
-    // console.log(client)
+    console.log(client)
     try {
         await new Promise((resolve, reject) => {
             client.connect({}, (frame) => {
-                // console.log('Connected===============================' + frame);
+                console.log('Connected===============================' + frame);
                 //接收controller传回来的数据并解析
                 client.subscribe(subscribeUrl, (chatting) => {
                     //chatting是controller对应的处理函数的方法
                     //content是后台传回来的Message对象的属性
                     const message = JSON.parse(chatting.body);
                     // console.log('back message!!!!!!!!!!!!!!!!!!!!!!!!!!!!' + message.data)
-                    console.log('subscribe client' + client)
+                    // console.log('subscribe client' + client)
                     messageCallback(message)
                 });
                 // client.send(sendUrl, {}, JSON.stringify({
@@ -36,9 +36,10 @@ const socketFun = async (endpointUrl, subscribeUrl, sendUrl, messageCallback) =>
             console.log(sendUrl)
             console.log('send client' + client)
 
-            client.send(sendUrl, {}, JSON.stringify({
-                messageMap
-            }));
+            // client.send(sendUrl, {}, JSON.stringify({
+            //     messageMap
+            // }));
+            client.send(sendUrl, {}, JSON.stringify(messageMap));
         }
     } catch (error) {
         console.log(error)

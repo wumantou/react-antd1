@@ -7521,14 +7521,6 @@ react-slick@~0.23.2:
     prettier "^1.14.3"
     resize-observer-polyfill "^1.5.0"
 
-react-stomp@^4.0.0:
-  version "4.0.0"
-  resolved "http://registry.npm.taobao.org/react-stomp/download/react-stomp-4.0.0.tgz#7708f5039bafcf3f51213ca4ddf66d4692bee95d"
-  dependencies:
-    net "^1.0.2"
-    sockjs-client "^1.1.5"
-    stompjs "^2.3.3"
-
 react@16.6.1:
   version "16.6.1"
   resolved "http://registry.npm.taobao.org/react/download/react-16.6.1.tgz#ee2aef4f0a09e494594882029821049772f915fe"
@@ -8184,7 +8176,7 @@ sockjs-client@1.1.5:
     json3 "^3.3.2"
     url-parse "^1.1.8"
 
-sockjs-client@^1.1.5, sockjs-client@^1.3.0:
+sockjs-client@1.3.0:
   version "1.3.0"
   resolved "http://registry.npm.taobao.org/sockjs-client/download/sockjs-client-1.3.0.tgz#12fc9d6cb663da5739d3dc5fb6e8687da95cb177"
   dependencies:
@@ -8195,7 +8187,7 @@ sockjs-client@^1.1.5, sockjs-client@^1.3.0:
     json3 "^3.3.2"
     url-parse "^1.4.3"
 
-sockjs@0.3.19, sockjs@^0.3.19:
+sockjs@0.3.19:
   version "0.3.19"
   resolved "http://registry.npm.taobao.org/sockjs/download/sockjs-0.3.19.tgz#d976bbe800af7bd20ae08598d582393508993c0d"
   dependencies:
@@ -8349,7 +8341,7 @@ stealthy-require@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/stealthy-require/-/stealthy-require-1.1.1.tgz#35b09875b4ff49f26a777e509b3090a3226bf24b"
 
-stompjs@^2.3.3:
+stompjs@2.3.3:
   version "2.3.3"
   resolved "http://registry.npm.taobao.org/stompjs/download/stompjs-2.3.3.tgz#34178ac7bb8ee294cc5d554ad8b50f7f5459fd8e"
   optionalDependencies:
