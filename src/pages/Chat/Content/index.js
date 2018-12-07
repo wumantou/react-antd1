@@ -8,20 +8,20 @@ class ChatContent extends React.Component {
     constructor(props) {
         super(props)
         console.log('======================================ChatContent constructor state is :' + JSON.stringify(this.props.chatContent))
-        this.state = {
-            searchText: '',
-        };
+        // this.state = {
+        //     searchText: '',
+        // };
     }
 
-    handleSearch = (selectedKeys, confirm) => () => {
-        confirm();
-        this.setState({ searchText: selectedKeys[0] });
-    }
-
-    handleReset = clearFilters => () => {
-        clearFilters();
-        this.setState({ searchText: '' });
-    }
+    // handleSearch = (selectedKeys, confirm) => () => {
+    //     confirm();
+    //     this.setState({ searchText: selectedKeys[0] });
+    // }
+    //
+    // handleReset = clearFilters => () => {
+    //     clearFilters();
+    //     this.setState({ searchText: '' });
+    // }
 
     render() {
         const columns = [{
